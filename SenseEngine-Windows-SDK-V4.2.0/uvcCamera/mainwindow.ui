@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>631</width>
+    <height>396</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>5</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2">
+      <item>
+       <widget class="videoWidget" name="widget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="msgLabel">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color:rgb(170, 0, 0)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>291</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>631</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDevices">
+    <property name="title">
+     <string>Devices</string>
+    </property>
+    <addaction name="actionSetting"/>
+    <addaction name="actionDisConnection"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuReboot">
+     <property name="title">
+      <string>Reboot</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionReboot_2"/>
+     <addaction name="actionUser_Reboot_with_Udisk"/>
+     <addaction name="actionUser_Reboot_without_Udisk"/>
+     <addaction name="actionFactory_Reboot_with_Udisk"/>
+     <addaction name="actionFactory_Reboot_without_Udisk"/>
+    </widget>
+    <addaction name="actionAbout"/>
+    <addaction name="actionLog_Config"/>
+    <addaction name="menuReboot"/>
+    <addaction name="actionSetUmodeToEngin"/>
+    <addaction name="actionReset"/>
+    <addaction name="actionRecovery"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuSetIsMirrored">
+     <property name="title">
+      <string>SetIsMirrored</string>
+     </property>
+     <addaction name="actionTrue_Mirrored"/>
+     <addaction name="actionFalse_Mirrored"/>
+    </widget>
+    <widget class="QMenu" name="menuStatic_Compare">
+     <property name="title">
+      <string>Static Compare</string>
+     </property>
+     <addaction name="actionLocal_Capture"/>
+     <addaction name="actionRemote_Input"/>
+    </widget>
+    <addaction name="actionAdd_base_library_by_Camera"/>
+    <addaction name="actionAdd_base_library_by_Camera_return"/>
+    <addaction name="actionAdd_base_library"/>
+    <addaction name="actionBatch_addition"/>
+    <addaction name="actionQuery_Single"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionDelete_All"/>
+    <addaction name="actionupgrade"/>
+    <addaction name="actionStart_Recognize"/>
+    <addaction name="actionStop_Recognize"/>
+    <addaction name="actionQuery_Recognize_Status"/>
+    <addaction name="menuStatic_Compare"/>
+    <addaction name="actionAdd_feature"/>
+    <addaction name="actionGet_feature"/>
+    <addaction name="actionGet_ID_List"/>
+    <addaction name="menuSetIsMirrored"/>
+   </widget>
+   <widget class="QMenu" name="menuConfig">
+    <property name="title">
+     <string>Config</string>
+    </property>
+    <widget class="QMenu" name="menuOpen_Camera">
+     <property name="title">
+      <string>Open Camera</string>
+     </property>
+     <addaction name="actionOpen_RGB"/>
+     <addaction name="actionOpen_IR"/>
+    </widget>
+    <widget class="QMenu" name="menuClose_Camera">
+     <property name="title">
+      <string>Close Camera</string>
+     </property>
+     <addaction name="actionClose_RGB"/>
+     <addaction name="actionClose_IR"/>
+    </widget>
+    <widget class="QMenu" name="menuAuto_Report">
+     <property name="title">
+      <string>Auto Report</string>
+     </property>
+     <widget class="QMenu" name="menuOpen_Auto_Report">
+      <property name="title">
+       <string>Open Auto Report</string>
+      </property>
+      <addaction name="actionfaceRGB_backRGB_IR"/>
+      <addaction name="actionfaceRGB_backRGB"/>
+      <addaction name="actionfaceRGB_IR"/>
+      <addaction name="actionbackRGB_IR"/>
+      <addaction name="actionfaceRGB"/>
+      <addaction name="actionbackRGB"/>
+      <addaction name="actionIR"/>
+      <addaction name="actionNoImage"/>
+     </widget>
+     <addaction name="menuOpen_Auto_Report"/>
+     <addaction name="actionClose_Auto_Report"/>
+    </widget>
+    <widget class="QMenu" name="menuFrame_Report">
+     <property name="title">
+      <string>Frame Report</string>
+     </property>
+     <addaction name="actionOpen_Frame_Report"/>
+     <addaction name="actionClose_Frame_Report"/>
+    </widget>
+    <widget class="QMenu" name="menuSet_Template_Update">
+     <property name="title">
+      <string>Set Template Update</string>
+     </property>
+     <addaction name="actionOpen_TemplateUpdate"/>
+     <addaction name="actionClose_TemplateUpdate"/>
+    </widget>
+    <widget class="QMenu" name="menuSet_Anti_Flicker">
+     <property name="title">
+      <string>Set Anti Flicker</string>
+     </property>
+     <addaction name="actionRGB_Camera"/>
+     <addaction name="actionIR_Camera"/>
+    </widget>
+    <addaction name="actionSwitch_Camera_RGB"/>
+    <addaction name="actionSwitch_Camera_IR"/>
+    <addaction name="actionGet_Version"/>
+    <addaction name="actionGet_Library_2"/>
+    <addaction name="actionGet_Cpu_Temp"/>
+    <addaction name="actionSet_Frame"/>
+    <addaction name="action_IR_Light_Config"/>
+    <addaction name="action_AI_Config"/>
+    <addaction name="actionSet_Recognize_Count"/>
+    <addaction name="actionGet_Recognize_Count"/>
+    <addaction name="menuSet_Template_Update"/>
+    <addaction name="actionGet_Template_Update"/>
+    <addaction name="actionGet_Sense_Value"/>
+    <addaction name="actionGet_SN"/>
+    <addaction name="actionGet_Model"/>
+    <addaction name="actionSet_Video_Size"/>
+    <addaction name="actionSet_Screen_Mode"/>
+    <addaction name="actionSet_Rotation"/>
+    <addaction name="actionSwitch_QRCode"/>
+    <addaction name="actionGet_Single_Recognize"/>
+    <addaction name="menuOpen_Camera"/>
+    <addaction name="menuClose_Camera"/>
+    <addaction name="menuAuto_Report"/>
+    <addaction name="menuFrame_Report"/>
+    <addaction name="menuSet_Anti_Flicker"/>
+    <addaction name="actionSet_Stream_Format"/>
+    <addaction name="actionGet_Model_App_Version"/>
+    <addaction name="actionGet_AE_Sensor"/>
+   </widget>
+   <widget class="QMenu" name="menuReomode">
+    <property name="title">
+     <string>Reomode</string>
+    </property>
+    <widget class="QMenu" name="menuOne_to_Num_Reomode">
+     <property name="title">
+      <string>One to Num Reomode</string>
+     </property>
+     <addaction name="actionMulti_Living"/>
+     <addaction name="actionMulti_Noliving"/>
+     <addaction name="actionSingle_Living"/>
+     <addaction name="actionSingle_Noliving"/>
+    </widget>
+    <widget class="QMenu" name="menuOne_to_One_Reomode">
+     <property name="title">
+      <string>One to One Reomode</string>
+     </property>
+     <addaction name="actionOne_Multi_Living"/>
+     <addaction name="actionOne_Multi_Noliving"/>
+     <addaction name="actionOto_Single_Living"/>
+     <addaction name="actionOto_Single_Noliving"/>
+    </widget>
+    <addaction name="menuOne_to_Num_Reomode"/>
+    <addaction name="menuOne_to_One_Reomode"/>
+   </widget>
+   <addaction name="menuDevices"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuReomode"/>
+   <addaction name="menuConfig"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionAdd_base_library">
+   <property name="text">
+    <string>Add base library</string>
+   </property>
+  </action>
+  <action name="actionBatch_addition">
+   <property name="text">
+    <string>Batch addition </string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete Single</string>
+   </property>
+  </action>
+  <action name="actionAdd_base_library_by_Camera">
+   <property name="text">
+    <string>Add base library by Camera</string>
+   </property>
+  </action>
+  <action name="actionDelete_All">
+   <property name="text">
+    <string>Delete All</string>
+   </property>
+  </action>
+  <action name="actionupgrade">
+   <property name="text">
+    <string>Upgrade</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="text">
+    <string>Setting</string>
+   </property>
+  </action>
+  <action name="actionStart_Recognize">
+   <property name="text">
+    <string>Start Recognize</string>
+   </property>
+  </action>
+  <action name="actionStop_Recognize">
+   <property name="text">
+    <string>Stop Recognize</string>
+   </property>
+  </action>
+  <action name="actionGet_Version">
+   <property name="text">
+    <string>Get Version</string>
+   </property>
+  </action>
+  <action name="actionSwitch_Camera_RGB">
+   <property name="text">
+    <string>Switch Camera RGB</string>
+   </property>
+  </action>
+  <action name="actionSwitch_Camera_IR">
+   <property name="text">
+    <string>Switch Camera IR</string>
+   </property>
+  </action>
+  <action name="actionEConnect">
+   <property name="text">
+    <string>Econnect</string>
+   </property>
+  </action>
+  <action name="actionGet_Library">
+   <property name="text">
+    <string>Get Library</string>
+   </property>
+  </action>
+  <action name="actionGet_Library_2">
+   <property name="text">
+    <string>Get Library</string>
+   </property>
+  </action>
+  <action name="actionSet_Reoconfig">
+   <property name="text">
+    <string>Set Reoconfig</string>
+   </property>
+  </action>
+  <action name="actionMulti_Living">
+   <property name="text">
+    <string>Multi Living</string>
+   </property>
+  </action>
+  <action name="actionMulti_Noliving">
+   <property name="text">
+    <string>Multi Noliving</string>
+   </property>
+  </action>
+  <action name="actionSingle_Living">
+   <property name="text">
+    <string>Single Living</string>
+   </property>
+  </action>
+  <action name="actionSingle_Noliving">
+   <property name="text">
+    <string>Single Noliving</string>
+   </property>
+  </action>
+  <action name="actionOne_Multi_Living">
+   <property name="text">
+    <string>Oto Multi Living</string>
+   </property>
+  </action>
+  <action name="actionOne_Multi_Noliving">
+   <property name="text">
+    <string>Oto Multi Noliving</string>
+   </property>
+  </action>
+  <action name="actionOto_Single_Living">
+   <property name="text">
+    <string>Oto Single Living</string>
+   </property>
+  </action>
+  <action name="actionOto_Single_Noliving">
+   <property name="text">
+    <string>Oto Single Noliving</string>
+   </property>
+  </action>
+  <action name="actionAdd_feature">
+   <property name="text">
+    <string>Add feature</string>
+   </property>
+  </action>
+  <action name="actionGet_feature">
+   <property name="text">
+    <string>Query feature</string>
+   </property>
+  </action>
+  <action name="actionSet_Frame">
+   <property name="text">
+    <string>Set Frame</string>
+   </property>
+  </action>
+  <action name="action_IR_Light_Config">
+   <property name="text">
+    <string>IR Light Config</string>
+   </property>
+  </action>
+  <action name="actionSet_AI_Config">
+   <property name="text">
+    <string>Set AI Config</string>
+   </property>
+  </action>
+  <action name="actionGet_Sense_Value">
+   <property name="text">
+    <string>Get Light Sensor</string>
+   </property>
+  </action>
+  <action name="actionReboot_2">
+   <property name="text">
+    <string>Reboot</string>
+   </property>
+  </action>
+  <action name="actionUser_Reboot_with_Udisk">
+   <property name="text">
+    <string>User Reboot with Udisk</string>
+   </property>
+  </action>
+  <action name="actionUser_Reboot_without_Udisk">
+   <property name="text">
+    <string>User Reboot without Udisk</string>
+   </property>
+  </action>
+  <action name="actionFactory_Reboot_with_Udisk">
+   <property name="text">
+    <string>Factory Reboot with Udisk</string>
+   </property>
+  </action>
+  <action name="actionFactory_Reboot_without_Udisk">
+   <property name="text">
+    <string>Factory Reboot without Udisk</string>
+   </property>
+  </action>
+  <action name="actionGet_SN">
+   <property name="text">
+    <string>Get SN</string>
+   </property>
+  </action>
+  <action name="actionGet_Model">
+   <property name="text">
+    <string>Get Model</string>
+   </property>
+  </action>
+  <action name="actionSet_Video_Size">
+   <property name="text">
+    <string>Set Video Size</string>
+   </property>
+  </action>
+  <action name="actionSet_Screen_Mode">
+   <property name="text">
+    <string>Set Screen Mode</string>
+   </property>
+  </action>
+  <action name="actionSet_Rotation">
+   <property name="text">
+    <string>Set Rotation</string>
+   </property>
+  </action>
+  <action name="action_AI_Config">
+   <property name="text">
+    <string>AI Config</string>
+   </property>
+  </action>
+  <action name="actionRecovery">
+   <property name="text">
+    <string>Recovery</string>
+   </property>
+  </action>
+  <action name="actionOpen_RGB">
+   <property name="text">
+    <string>Open RGB</string>
+   </property>
+  </action>
+  <action name="actionOpen_IR">
+   <property name="text">
+    <string>Open IR</string>
+   </property>
+  </action>
+  <action name="actionClose_RGB">
+   <property name="text">
+    <string>Close RGB</string>
+   </property>
+  </action>
+  <action name="actionClose_IR">
+   <property name="text">
+    <string>Close IR</string>
+   </property>
+  </action>
+  <action name="actionGet_ID_List">
+   <property name="text">
+    <string>Get ID List</string>
+   </property>
+  </action>
+  <action name="actionClose_Auto_Report">
+   <property name="text">
+    <string>Close Auto Report</string>
+   </property>
+  </action>
+  <action name="actionTrue_Mirrored">
+   <property name="text">
+    <string>True Mirrored</string>
+   </property>
+  </action>
+  <action name="actionFalse_Mirrored">
+   <property name="text">
+    <string>False Mirrored</string>
+   </property>
+  </action>
+  <action name="actionOpen_Frame_Report">
+   <property name="text">
+    <string>Open Frame Report</string>
+   </property>
+  </action>
+  <action name="actionClose_Frame_Report">
+   <property name="text">
+    <string>Close Frame Report</string>
+   </property>
+  </action>
+  <action name="actionRGB_50HZ">
+   <property name="text">
+    <string>RGB 50HZ</string>
+   </property>
+  </action>
+  <action name="actionRGB_60HZ">
+   <property name="text">
+    <string>RGB 60HZ</string>
+   </property>
+  </action>
+  <action name="actionIR_50HZ">
+   <property name="text">
+    <string>IR 50HZ</string>
+   </property>
+  </action>
+  <action name="actionIR_60HZ">
+   <property name="text">
+    <string>IR 60HZ</string>
+   </property>
+  </action>
+  <action name="actionRGB_50HZ_2">
+   <property name="text">
+    <string>RGB 50HZ</string>
+   </property>
+  </action>
+  <action name="actionRGB_60HZ_2">
+   <property name="text">
+    <string>RGB 60HZ</string>
+   </property>
+  </action>
+  <action name="actionIR_50HZ_2">
+   <property name="text">
+    <string>IR 50HZ</string>
+   </property>
+  </action>
+  <action name="actionIR_60HZ_2">
+   <property name="text">
+    <string>IR 60HZ</string>
+   </property>
+  </action>
+  <action name="actionSet_Recognize_Count">
+   <property name="text">
+    <string>Set Recognize Count</string>
+   </property>
+  </action>
+  <action name="actionGet_Recognize_Count">
+   <property name="text">
+    <string>Get Recognize Count</string>
+   </property>
+  </action>
+  <action name="actionGet_Template_Update">
+   <property name="text">
+    <string>Get Template Update</string>
+   </property>
+  </action>
+  <action name="actionOpen_TemplateUpdate">
+   <property name="text">
+    <string>Open TemplateUpdate</string>
+   </property>
+  </action>
+  <action name="actionClose_TemplateUpdate">
+   <property name="text">
+    <string>Close TemplateUpdate</string>
+   </property>
+  </action>
+  <action name="actionfaceRGB_backRGB_IR">
+   <property name="text">
+    <string>faceRGB backRGB IR</string>
+   </property>
+  </action>
+  <action name="actionfaceRGB_backRGB">
+   <property name="text">
+    <string>faceRGB backRGB</string>
+   </property>
+  </action>
+  <action name="actionfaceRGB_IR">
+   <property name="text">
+    <string>faceRGB IR</string>
+   </property>
+  </action>
+  <action name="actionbackRGB_IR">
+   <property name="text">
+    <string>backRGB IR</string>
+   </property>
+  </action>
+  <action name="actionfaceRGB">
+   <property name="text">
+    <string>faceRGB</string>
+   </property>
+  </action>
+  <action name="actionbackRGB">
+   <property name="text">
+    <string>backRGB</string>
+   </property>
+  </action>
+  <action name="actionIR">
+   <property name="text">
+    <string>IR</string>
+   </property>
+  </action>
+  <action name="actionNoImage">
+   <property name="text">
+    <string>NoImage</string>
+   </property>
+  </action>
+  <action name="actionAdd_base_library_by_Camera_return">
+   <property name="text">
+    <string>Add base library by Camera_return</string>
+   </property>
+  </action>
+  <action name="actionSwitch_QRCode">
+   <property name="text">
+    <string>Switch QRCode</string>
+   </property>
+  </action>
+  <action name="actionGet_Cpu_Temp">
+   <property name="text">
+    <string>Get Cpu Temp</string>
+   </property>
+  </action>
+  <action name="actionDisConnection">
+   <property name="text">
+    <string>DisConnection</string>
+   </property>
+  </action>
+  <action name="actionGet_Single_Recognize">
+   <property name="text">
+    <string>Get Single Recognize</string>
+   </property>
+  </action>
+  <action name="actionTrace">
+   <property name="text">
+    <string>Trace</string>
+   </property>
+  </action>
+  <action name="actionDebug">
+   <property name="text">
+    <string>Debug</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+  <action name="actionWarn">
+   <property name="text">
+    <string>Warn</string>
+   </property>
+  </action>
+  <action name="actionError">
+   <property name="text">
+    <string>Error</string>
+   </property>
+  </action>
+  <action name="actionFatal">
+   <property name="text">
+    <string>Fatal</string>
+   </property>
+  </action>
+  <action name="actionNone">
+   <property name="text">
+    <string>None</string>
+   </property>
+  </action>
+  <action name="actionLog_Config">
+   <property name="text">
+    <string>Log Config</string>
+   </property>
+  </action>
+  <action name="actionQuery_Recognize_Status">
+   <property name="text">
+    <string>Query Recognize Status</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionQuery_Single">
+   <property name="text">
+    <string>Query Single</string>
+   </property>
+  </action>
+  <action name="actionLocal_Capture">
+   <property name="text">
+    <string>Local Capture</string>
+   </property>
+  </action>
+  <action name="actionRemote_Input">
+   <property name="text">
+    <string>Remote Input</string>
+   </property>
+  </action>
+  <action name="actionRGB_Camera">
+   <property name="text">
+    <string>RGB Camera</string>
+   </property>
+  </action>
+  <action name="actionIR_Camera">
+   <property name="text">
+    <string>IR Camera</string>
+   </property>
+  </action>
+  <action name="actionSetUmodeToEngin">
+   <property name="text">
+    <string>SetUmodeToEngin</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionSet_Stream_Format">
+   <property name="text">
+    <string>Set Stream Format</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionGet_Model_App_Version">
+   <property name="text">
+    <string>Get Model App Version</string>
+   </property>
+  </action>
+  <action name="actionGet_AE_Sensor">
+   <property name="text">
+    <string>Get AE Sensor</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>videoWidget</class>
+   <extends>QWidget</extends>
+   <header>videowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
